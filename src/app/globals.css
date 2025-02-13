@@ -11,3 +11,7 @@
   --gray-medium: #A6A6A6;
   --gray-dark: #333333;
 }
+
+body {
+  background: var(--black-soft);
+}
