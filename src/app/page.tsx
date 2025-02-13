@@ -1,6 +1,4 @@
 //src\app\page.tsx
-
-import NavigationBar from "@/components/NavigationBar";
 import Link from "next/link";
 
 
