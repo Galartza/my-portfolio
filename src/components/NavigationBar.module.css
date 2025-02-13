@@ -35,7 +35,7 @@
     transition: color 0.3s ease-in-out, transform 0.2s ease;
 }
 
-/* Efecto al pasar el mouse */
+
 .navLink:hover {
     color: var(--black-soft);
     transform: scale(1.2);
@@ -44,12 +44,12 @@
 /* ✅ ESTILOS PARA PANTALLAS GRANDES (ESCRITORIO) */
 @media screen and (min-width: 1024px) {
     .nav {
-        width: 400px; /* Más grande en escritorio */
+        width: 400px; 
         height: 60px;
         border-radius: 10px;
     }
 
     .navLink {
-        font-size: 24px; /* Íconos más grandes */
+        font-size: 24px;
     }
 }
