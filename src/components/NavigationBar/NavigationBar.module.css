@@ -1,55 +1,67 @@
-
-.nav {
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+/* Estilos para el estado activo */
+.active {
+    /* color: var(--black-soft) !important; Asegura que este color prevalezca */
+    border-bottom: 2px solid var(--white-soft);
+  }
+  
+  .nav {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    background-color: var(--green-dark);
+    background: var(--green-medium);
     width: 350px;
-    height: 60px;
+    height: 74px;
     align-items: center;
     justify-content: space-around;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
-    rgba(56, 176, 0, 0.082) 4px 10px 15px;
-}
-
-.navItem {
+    border-radius: 15px;
+    border: solid 1px var(--green-light);
+    box-shadow: 1px 5px 10px 0px var(--green-dark);
+  }
+  
+  .navItem {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-}
-/* Estilos de los enlaces */
-.navLink {
+  }
+  
+  /* Estilos de los enlaces */
+  .navLink {
     font-size: 25px;
     font-weight: 600;
     border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--white-soft);
     cursor: pointer;
     text-decoration: none;
     transition: color 0.3s ease-in-out, transform 0.2s ease;
-}
-
-
-.navLink:hover {
-    color: var(--black-soft);
-    transform: scale(1.2);
-}
-
-/* ✅ ESTILOS PARA PANTALLAS GRANDES (ESCRITORIO) */
-@media screen and (min-width: 1024px) {
+  }
+  
+  .textNavLink {
+    font-size: 12px;
+  }
+  
+  .navIcon {
+    /* Estilos para los íconos */
+  }
+  
+  /* ✅ ESTILOS PARA PANTALLAS GRANDES (ESCRITORIO) */
+  @media screen and (min-width: 1024px) {
     .nav {
-        width: 400px; 
-        height: 60px;
-        border-radius: 10px;
+      width: 400px;
+      height: 60px;
+      border-radius: 10px;
+      bottom: 30px;
     }
-
+  
     .navLink {
-        font-size: 24px;
+      font-size: 24px;
     }
-}
+  }

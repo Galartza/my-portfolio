@@ -1,11 +1,11 @@
 .card {
     width: 260px;
-    height: 366px;
+    height: 396px;
     background: var(--green-medium);
     border-radius: 15px;
-    box-shadow: 1px 5px 30px 0px var(--green-dark);
+    box-shadow: 1px 5px 10px 0px var(--green-dark);
     margin: auto;
-    border: solid 3px var(--green-light);
+    border: solid 1px var(--green-light);
 }
 
 .card .cardBorderTop {
@@ -15,9 +15,9 @@
     margin: auto;
     border-radius: 0px 0px 15px 15px;
     border-top: none;
-    border-right: 3px solid var(--green-light);
-    border-bottom: 3px solid var(--green-light);
-    border-left: 3px solid var(--green-light);
+    border-right: 1px solid var(--green-light);
+    border-bottom: 1px solid var(--green-light);
+    border-left: 1px solid var(--green-light);
 }
 
 .card span {
@@ -25,8 +25,9 @@
     color: var(--white-soft);
     display: block;
     text-align: center;
-    padding-top: 3px;
-    font-size: 28px;
+    padding: 20px 0;
+    font-size: 30px;
+    line-height: 28px;
 }
 
 .card .job {
@@ -34,18 +35,16 @@
     color: var(--white-soft);
     display: block;
     text-align: center;
-    padding-top: 3px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .card .img {
     width: 90px;
     height: 100px;
     background-color: var(--green-light);
-    border-radius: 100%;
+    border-radius: 15px;
     margin: auto;
-    margin-top: 25px;
-    border: solid 3px var(--green-dark);
+    border: solid 1px var(--green-dark);
 }
 
 .card .btnComeOn {
@@ -54,27 +53,15 @@
     margin: auto;
     border-radius: 8px;
     border: none;
-    margin-top: 30px;
+    margin-top: 20px;
     background: var(--green-light);
     color: var(--white-soft);
     font-weight: 600;
     font-size: 18px;
-    border: solid 3px var(--green-dark);
+    border: solid 1px var(--green-dark);
 }
 
 .card .btnComeOn:hover {
     background-color: var(--green-dark);
-    border: solid 3px var(--green-light);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+    border: solid 1px var(--green-light);
 }
