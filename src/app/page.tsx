@@ -1,17 +1,13 @@
-//src\app\page.tsx
+//src\app\page.tsen
+import StartCard from "@/components/StartCard/StartCard"
+import 'animate.css';
+=======
 import Link from "next/link";
-
-
 
 export default function Home() {
   return (
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <h1>bienvenido</h1>
-      <button>
-        <Link href={"/home"}>
-          ¡Vamos!
-        </Link>
-      </button>
+      <main className="flex h-screen justify-center items-center sm:items-center">
+        <StartCard/>
       </main>
   );
 }
