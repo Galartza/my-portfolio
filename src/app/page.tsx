@@ -1,4 +1,4 @@
-//src\app\page.tsen
+//src\app\page.tsx
 import StartCard from "@/components/StartCard/StartCard"
 import 'animate.css';
 
