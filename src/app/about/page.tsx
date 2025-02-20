@@ -93,7 +93,7 @@ const AboutPage = () => {
         <div className={`${styles.containerImage} animate__animated ${isVisible ? 'animate__backInRight' : 'animate__fadeOutRight'}`}>
           {/* Imagen colocada directamente */}
           <Image
-            src="/coder.png" // Ruta de la imagen en la carpeta public
+            src="/Coder.png" // Ruta de la imagen en la carpeta public
             alt="aboutme"
             width={500} // Ajusta el ancho según tus necesidades
             height={500} // Ajusta el alto según tus necesidades
