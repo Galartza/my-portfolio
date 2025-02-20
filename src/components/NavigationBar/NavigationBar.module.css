@@ -6,7 +6,7 @@
   
   .nav {
     position: absolute;
-    bottom: -40px;
+    bottom: .5rem;
     left: 0;
     right: 0;
     margin-left: auto;

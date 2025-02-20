@@ -2,75 +2,52 @@
 import React, { useState, useEffect } from 'react';
 import styles from './NavigationBar.module.css';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Importar usePathname
+import { usePathname, useRouter } from 'next/navigation';
 import 'animate.css';
 import { FaFolderOpen, FaHome, FaPhone, FaUser } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
 
 const NavigationBar: React.FC = () => {
-  const [isEntering, setIsEntering] = useState<boolean>(false);
-  const [isExiting, setIsExiting] = useState<boolean>(false);
+  const [isExiting, setIsExiting] = useState(false);
   const router = useRouter();
-  const pathname = usePathname(); // Obtener la ruta actual
+  const pathname = usePathname();
 
-  useEffect(() => {
-    // Verificamos si hay un indicador en el localStorage
-    const shouldAnimate = localStorage.getItem('shouldAnimateNav');
-    if (shouldAnimate === 'true') {
-      setIsEntering(true); // Activamos la animación de entrada
-      localStorage.removeItem('shouldAnimateNav'); // Eliminamos el indicador
-    }
-  }, []);
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, path: string) => {
+    if (pathname === path) return; // Evitar la animación si ya estamos en la página
 
-  const handleExit = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, path: string) => {
-    if (path === '/') {
-      e.preventDefault(); // Evita la navegación inmediata
-      setIsExiting(true); // Activa la animación de salida
-      setTimeout(() => {
-        router.push('/'); // Redirige después de la animación
-      }, 1000); // Duración que coincide con la animación de salida
-    }
+    e.preventDefault();
+    setIsExiting(true);
+    localStorage.setItem('shouldAnimateEnter', 'true');
+
+    setTimeout(() => {
+      router.push(path);
+    }, 500);
   };
 
   return (
-    <nav className={`${styles.nav} animate__animated ${isEntering ? 'animate__zoomInDown' : ''} ${isExiting ? 'animate__zoomOutUp' : ''}`}>
+    <nav className={`${styles.nav} animate__animated ${isExiting ? 'animate__fadeOutUp' : 'animate__fadeInDown'}`}>
       <ul className={styles.navItem}>
         <li className={styles.navList}>
-          <Link
-            href={'/'}
-            className={`${styles.navLink} ${pathname === '/' ? styles.actives : ''}`}
-            onClick={(e) => handleExit(e, '/')}
-            style={{ pointerEvents: isExiting ? 'none' : 'auto' }}
-          >
-            <FaHome className={`${styles.navIcon} ${pathname === '/' ? styles.actives : ''}`} />
-            <p className={`${styles.textNavLink} ${pathname === '/' ? styles.active : ''}`}>home</p>
+          <Link href="/" onClick={(e) => handleNavigation(e, '/')} className={`${styles.navLink} ${pathname === '/' ? styles.actives : ''}`}>
+            <FaHome className={styles.navIcon} />
+            <p className={`${styles.textNavLink} ${pathname === '/' ? styles.active : ''}`}>Home</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link
-            href={'/about'}
-            className={`${styles.navLink} ${pathname === '/about' ? styles.actives : ''}`}
-          >
-            <FaUser className={`${styles.navIcon} ${pathname === '/about' ? styles.actives : ''}`} />
-            <p className={`${styles.textNavLink} ${pathname === '/about' ? styles.active : ''}`}>about me</p>
+          <Link href="/about" onClick={(e) => handleNavigation(e, '/about')} className={`${styles.navLink} ${pathname === '/about' ? styles.actives : ''}`}>
+            <FaUser className={styles.navIcon} />
+            <p className={`${styles.textNavLink} ${pathname === '/about' ? styles.active : ''}`}>About Me</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link
-            href={'/portfolio'}
-            className={`${styles.navLink} ${pathname === '/portfolio' ? styles.actives : ''}`}
-          >
-            <FaFolderOpen className={`${styles.navIcon} ${pathname === '/portfolio' ? styles.actives : ''}`} />
-            <p className={`${styles.textNavLink} ${pathname === '/portfolio' ? styles.active : ''}`}>portfolio</p>
+          <Link href="/portfolio" onClick={(e) => handleNavigation(e, '/portfolio')} className={`${styles.navLink} ${pathname === '/portfolio' ? styles.actives : ''}`}>
+            <FaFolderOpen className={styles.navIcon} />
+            <p className={`${styles.textNavLink} ${pathname === '/portfolio' ? styles.active : ''}`}>Portfolio</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link
-            href={'/contact'}
-            className={`${styles.navLink} ${pathname === '/contact' ? styles.actives : ''}`}
-          >
-            <FaPhone className={`${styles.navIcon} ${pathname === '/contact' ? styles.actives : ''}`} />
-            <p className={`${styles.textNavLink} ${pathname === '/contact' ? styles.active : ''}`}>contact</p>
+          <Link href="/contact" onClick={(e) => handleNavigation(e, '/contact')} className={`${styles.navLink} ${pathname === '/contact' ? styles.actives : ''}`}>
+            <FaPhone className={styles.navIcon} />
+            <p className={`${styles.textNavLink} ${pathname === '/contact' ? styles.active : ''}`}>Contact</p>
           </Link>
         </li>
       </ul>
