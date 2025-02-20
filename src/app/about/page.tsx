@@ -63,58 +63,44 @@ const AboutPage = () => {
     router.push('/contact');
   };
 
-  const contend = [
-    {
-      title: 'Sobre mí',
-      description: (
-        <>
-          Soy programador Front-end. Apasionado por crear soluciones digitales que mejoren la experiencia del usuario.
-          <br />
-          También tengo conocimientos en back-end adquiridos en mis estudios y proyectos.
-          <br />
-          Mi objetivo es aprender y crecer como desarrollador, enfrentando nuevos desafíos para seguir ampliando mis habilidades en esa área.
-        </>
-      ),
-      image: '/coder.png',
-    },
-  ];
-
   return (
     <section
       ref={sectionRef}
       className={`${styles.sectionContainer} animate__animated ${isEntering ? 'animate__fadeIn' : ''}`}
     >
-      {contend.map((item, index) => (
-        <div key={index} className={styles.containerContent}>
-          <div className={styles.containerText}>
-            <h1 className={`${styles.titleAbout} animate__animated ${isVisible ? 'animate__backInDown' : 'animate__fadeOutUp'}`}>
-              {item.title}
-            </h1>
-            <p className={`${styles.description} animate__animated ${isVisible ? 'animate__backInLeft' : 'animate__fadeOutLeft'}`}>
-              {item.description}
-            </p>
-            <div className={styles.btnContainer}>
-              <button
-                className={`${styles.btnContact} animate__animated ${buttonAnimation}`}
-                onClick={handleContactClick}
-              >
-                <FaArrowRight /> Contactame <FaArrowLeft />
-              </button>
-            </div>
-          </div>
-
-          <div className={`${styles.containerImage} animate__animated ${isVisible ? 'animate__backInRight' : 'animate__fadeOutRight'}`}>
-            {/* Reemplazar <img> con <Image /> de Next.js */}
-            <Image
-              src={item.image}
-              alt="aboutme"
-              width={500} // Ajusta el ancho según tus necesidades
-              height={500} // Ajusta el alto según tus necesidades
-              className={styles.imgAbout}
-            />
+      <div className={styles.containerContent}>
+        <div className={styles.containerText}>
+          <h1 className={`${styles.titleAbout} animate__animated ${isVisible ? 'animate__backInDown' : 'animate__fadeOutUp'}`}>
+            Sobre mí
+          </h1>
+          <p className={`${styles.description} animate__animated ${isVisible ? 'animate__backInLeft' : 'animate__fadeOutLeft'}`}>
+            Soy programador Front-end. Apasionado por crear soluciones digitales que mejoren la experiencia del usuario.
+            <br />
+            También tengo conocimientos en back-end adquiridos en mis estudios y proyectos.
+            <br />
+            Mi objetivo es aprender y crecer como desarrollador, enfrentando nuevos desafíos para seguir ampliando mis habilidades en esa área.
+          </p>
+          <div className={styles.btnContainer}>
+            <button
+              className={`${styles.btnContact} animate__animated ${buttonAnimation}`}
+              onClick={handleContactClick}
+            >
+              <FaArrowRight /> Contactame <FaArrowLeft />
+            </button>
           </div>
         </div>
-      ))}
+
+        <div className={`${styles.containerImage} animate__animated ${isVisible ? 'animate__backInRight' : 'animate__fadeOutRight'}`}>
+          {/* Imagen colocada directamente */}
+          <Image
+            src="/coder.png" // Ruta de la imagen en la carpeta public
+            alt="aboutme"
+            width={500} // Ajusta el ancho según tus necesidades
+            height={500} // Ajusta el alto según tus necesidades
+            className={styles.imgAbout}
+          />
+        </div>
+      </div>
       <NavigationBar />
     </section>
   );
