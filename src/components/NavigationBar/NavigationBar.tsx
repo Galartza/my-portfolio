@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react'; // Eliminamos useEffect si no se usa
 import styles from './NavigationBar.module.css';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -27,25 +27,41 @@ const NavigationBar: React.FC = () => {
     <nav className={`${styles.nav} animate__animated ${isExiting ? 'animate__fadeOutUp' : 'animate__fadeInDown'}`}>
       <ul className={styles.navItem}>
         <li className={styles.navList}>
-          <Link href="/" onClick={(e) => handleNavigation(e, '/')} className={`${styles.navLink} ${pathname === '/' ? styles.actives : ''}`}>
+          <Link
+            href="/"
+            onClick={(e) => handleNavigation(e, '/')}
+            className={`${styles.navLink} ${pathname === '/' ? styles.actives : ''}`}
+          >
             <FaHome className={styles.navIcon} />
             <p className={`${styles.textNavLink} ${pathname === '/' ? styles.active : ''}`}>Home</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link href="/about" onClick={(e) => handleNavigation(e, '/about')} className={`${styles.navLink} ${pathname === '/about' ? styles.actives : ''}`}>
+          <Link
+            href="/about"
+            onClick={(e) => handleNavigation(e, '/about')}
+            className={`${styles.navLink} ${pathname === '/about' ? styles.actives : ''}`}
+          >
             <FaUser className={styles.navIcon} />
             <p className={`${styles.textNavLink} ${pathname === '/about' ? styles.active : ''}`}>About Me</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link href="/portfolio" onClick={(e) => handleNavigation(e, '/portfolio')} className={`${styles.navLink} ${pathname === '/portfolio' ? styles.actives : ''}`}>
+          <Link
+            href="/portfolio"
+            onClick={(e) => handleNavigation(e, '/portfolio')}
+            className={`${styles.navLink} ${pathname === '/portfolio' ? styles.actives : ''}`}
+          >
             <FaFolderOpen className={styles.navIcon} />
             <p className={`${styles.textNavLink} ${pathname === '/portfolio' ? styles.active : ''}`}>Portfolio</p>
           </Link>
         </li>
         <li className={styles.navList}>
-          <Link href="/contact" onClick={(e) => handleNavigation(e, '/contact')} className={`${styles.navLink} ${pathname === '/contact' ? styles.actives : ''}`}>
+          <Link
+            href="/contact"
+            onClick={(e) => handleNavigation(e, '/contact')}
+            className={`${styles.navLink} ${pathname === '/contact' ? styles.actives : ''}`}
+          >
             <FaPhone className={styles.navIcon} />
             <p className={`${styles.textNavLink} ${pathname === '/contact' ? styles.active : ''}`}>Contact</p>
           </Link>
