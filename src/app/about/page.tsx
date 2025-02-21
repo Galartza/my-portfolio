@@ -80,14 +80,14 @@ const AboutPage = () => {
             <br />
             Mi objetivo es aprender y crecer como desarrollador, enfrentando nuevos desafíos para seguir ampliando mis habilidades en esa área.
           </p>
-          <div className={styles.btnContainer}>
+          {/* <div className={styles.btnContainer}>
             <button
               className={`${styles.btnContact} animate__animated ${buttonAnimation}`}
               onClick={handleContactClick}
             >
               <FaArrowRight /> Contactame <FaArrowLeft />
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div className={`${styles.containerImage} animate__animated ${isVisible ? 'animate__backInRight' : 'animate__fadeOutRight'}`}>
