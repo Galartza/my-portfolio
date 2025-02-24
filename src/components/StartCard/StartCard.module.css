@@ -36,6 +36,7 @@
     padding: 20px 0;
     font-size: 30px;
     line-height: 28px;
+    padding: 1rem;
 }
 
 .card .job {
@@ -44,6 +45,7 @@
     display: block;
     text-align: center;
     font-size: 16px;
+    
 }
 
 .card .img {
