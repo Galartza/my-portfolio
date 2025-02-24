@@ -62,6 +62,7 @@
 /* Tablets */
 @media (max-width: 1024px) {
     .sectionContainer {
+        height: 100vh;
         flex-direction: column;
         height: auto;
         padding: 40px 20px;
@@ -94,6 +95,7 @@
 /* Móviles */
 @media (max-width: 768px) {
     .sectionContainer {
+        height: 100vh;
         padding: 30px 15px;
     }
 

@@ -20,7 +20,7 @@ const StartCard = () => {
   return (
     <div className={`${styles.card} animate__animated ${isExiting ? 'animate__zoomOutUp' : 'animate__zoomInDown'}`}>
       <div className={styles.cardBorderTop}></div>
-      <span>¡Bienvenido a mi Portfolio!</span>
+      <span className={styles.titleSpan}>¡Bienvenido a mi Portfolio!</span>
       <Image
         className={styles.img}
         src="/avatar.png"
@@ -28,7 +28,7 @@ const StartCard = () => {
         height={140}
         alt="Avatar"
       />
-      <span>Joaquin Galarza</span>
+      <span className={styles.nameSpan}>Joaquin Galarza</span>
       <p className={styles.job}>Programador Front-End</p>
       <button className={styles.btnComeOn} onClick={handleExit}>
         ¡Vamos!
