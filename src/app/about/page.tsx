@@ -3,12 +3,10 @@ import NavigationBar from '@/components/NavigationBar/NavigationBar';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './about.module.css';
 import 'animate.css';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image'; // Importar el componente Image de Next.js
 
 const AboutPage = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isEntering, setIsEntering] = useState(false);
 
